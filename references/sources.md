@@ -14,3 +14,14 @@
 原始规则和三个SVG示例以本仓库的MIT许可证发布。第三方项目的许可证由其自身仓库决定，不能把本仓库MIT许可套到第三方内容上。
 
 用户提供的学术架构图只用于提炼偏好：信息丰富、中心或双侧关系、分层技术路线、证据小图和多种布局。因未确认再发布许可，公开版本不包含这些截图、品牌标识或宣传拼图。
+
+## 第三版调研与调整
+
+| 来源 | 采用的思路 | 本技能的范围 |
+| --- | --- | --- |
+| [PPTAgent skill](https://github.com/icip-cas/PPTAgent/blob/main/skills/pptagent/SKILL.md) | 改动后重新渲染，核对最终文件与所审阅源稿 | 使用当前环境工具，不引入其CLI或服务依赖 |
+| [PPTKit presentation guide](https://github.com/openHacking/pptkit-presentation/blob/main/docs/guides/presentation-skill.md) | 稳定页面标识、版本与受影响页记录 | 用轻量清单与PPT对象名，不复制其前端或实现 |
+| [PPTBench](https://arxiv.org/abs/2609.29718)（预印本） | 科研流程图的连接关系与视觉质量分别评价 | 科学箭头人工核对，不声称获得其基准分数 |
+| [SlideLab](https://arxiv.org/abs/2609.30294)（预印本） | 用错数值、损坏图、漏页与乱序验证评价方法 | 增加实际故障用例，不引入多代理平台或未经验证的效果承诺 |
+
+以上属于方法借鉴，没有复制第三方代码、指令正文或图像。DeepOPF案例使用论文事实与表格数据独立制作图示，来源与版本见案例说明及备注。书目与论文原文仍受各自权利约束。

@@ -1,0 +1,598 @@
+{
+  "schema_version": 1,
+  "title": "数据驱动的电力系统最优潮流",
+  "sources": {
+    "deepopf": {
+      "title": "Pan et al. DeepOPF: A Feasibility-Optimized Deep Neural Network Approach for AC Optimal Power Flow Problems",
+      "url": "https://arxiv.org/abs/2007.01002v6",
+      "version": "arXiv v6, 2022-07-01"
+    },
+    "plus": {
+      "title": "Zhao et al. DeepOPF+: A Deep Neural Network Approach for DC Optimal Power Flow for Ensuring Feasibility",
+      "url": "https://arxiv.org/abs/2009.03147",
+      "version": "downloaded 2026-10-10; PDF 7 pages"
+    },
+    "voltage": {
+      "title": "Huang et al. DeepOPF-V: Solving AC-OPF Problems Efficiently",
+      "url": "https://arxiv.org/abs/2103.11793",
+      "version": "downloaded 2026-10-10; PDF 4 pages"
+    },
+    "matpower": {
+      "title": "MATPOWER User Manual",
+      "url": "https://matpower.org/docs/MATPOWER-manual.pdf",
+      "version": "online manual inspected 2026-10-10"
+    },
+    "abstract": {
+      "title": "DeepOPF arXiv abstract page",
+      "url": "https://arxiv.org/abs/2007.01002",
+      "version": "web abstract inspected 2026-10-10"
+    }
+  },
+  "slides": [
+    {
+      "id": "cover",
+      "part": "ppt/slides/slide1.xml",
+      "title": "数据驱动的电力系统最优潮流",
+      "required_objects": [
+        "cover.title"
+      ],
+      "claims": [
+        {
+          "text": "本报告从运行问题开始，解释学习与物理重构如何结合，再检查实验口径及适用边界。封面网络仅用于说明电源与母线的物理连接。",
+          "source": "deepopf",
+          "locator": "标题、§III–IV",
+          "status": "interpretation"
+        }
+      ]
+    },
+    {
+      "id": "research-question",
+      "part": "ppt/slides/slide2.xml",
+      "title": "研究问题与判断标准",
+      "required_objects": [
+        "research-question.title"
+      ],
+      "claims": [
+        {
+          "text": "中心对象是给定负荷下的运行决策。两侧分别提供数据基础与物理限制，上下是评价维度。连线表示支撑关系，不表示电网中真实功率流向。",
+          "source": "deepopf",
+          "locator": "§I、§III、§VI-A",
+          "status": "interpretation"
+        }
+      ]
+    },
+    {
+      "id": "opf-context",
+      "part": "ppt/slides/slide3.xml",
+      "title": "最优潮流的运行问题",
+      "required_objects": [
+        "opf-context.title"
+      ],
+      "claims": [
+        {
+          "text": "网络节点只表示电源、母线与支路关系，不对应特定IEEE拓扑。右侧分开等式和不等式条件，再在底部给输入、优化和输出。最优潮流属于稳态运行优化，不能由此替代暂态稳定或安全校核。",
+          "source": "matpower",
+          "locator": "§4 Power Flow、§6 Optimal Power Flow",
+          "status": "interpretation"
+        }
+      ]
+    },
+    {
+      "id": "formulation",
+      "part": "ppt/slides/slide4.xml",
+      "title": "AC-OPF的目标与约束",
+      "required_objects": [
+        "formulation.title"
+      ],
+      "claims": [
+        {
+          "text": "P表示有功，Q表示无功，V表示电压幅值，θ表示相角，G与B是节点导纳矩阵实部与虚部。本页以标准节点导纳表达写功率平衡，强调等式约束与运行不等式分别需要处理。",
+          "source": "deepopf",
+          "locator": "§III、式(1)–(7)",
+          "status": "interpretation"
+        }
+      ],
+      "tables": [
+        {
+          "index": 0,
+          "values": [
+            [
+              "约束类别",
+              "主要变量与边界",
+              "含义"
+            ],
+            [
+              "发电限制",
+              "Pᴳ、Qᴳ 的上下限",
+              "发电机运行范围"
+            ],
+            [
+              "电压限制",
+              "|V| 的上下限",
+              "母线电压范围"
+            ],
+            [
+              "支路限制",
+              "|Sᵢⱼ| ≤ Sᵢⱼ,max",
+              "支路视在功率限值"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mapping",
+      "part": "ppt/slides/slide5.xml",
+      "title": "负荷到运行变量的学习映射",
+      "required_objects": [
+        "mapping.title"
+      ],
+      "claims": [
+        {
+          "text": "训练输入与参考解必须对应同一场景。图中神经元数只是结构示意，实际算例隐藏层规模见实验设计页。预测部分变量，再由物理重构其余量。一个算例的映射不等于任意电网的通用模型；拓扑或约束改变需重新评估。",
+          "source": "deepopf",
+          "locator": "§IV-A、§IV-D",
+          "status": "interpretation"
+        }
+      ]
+    },
+    {
+      "id": "method-options",
+      "part": "ppt/slides/slide6.xml",
+      "title": "学习方法在求解流程中的位置",
+      "required_objects": [
+        "method-options.title"
+      ],
+      "claims": [
+        {
+          "text": "三条链表示学习模块的位置。热启动仍需优化求解器完成原问题。DeepOPF采用预测与物理重构，同时仍需不等式检查及必要恢复，因此速度必须按整条在线流程计时。",
+          "source": "deepopf",
+          "locator": "§II、§VI-A",
+          "status": "interpretation"
+        }
+      ]
+    },
+    {
+      "id": "architecture",
+      "part": "ppt/slides/slide7.xml",
+      "title": "DeepOPF的总体研究架构",
+      "required_objects": [
+        "architecture.title"
+      ],
+      "claims": [
+        {
+          "text": "按左侧离线数据与训练、中心四个计算角色、右侧在线验证、底部主计算流程阅读。图的内容是原文方法的原创概念组织，不是训练结果。预测的是PV母线P_G与电压幅值以及平衡母线电压幅值；负荷和参考角作为已知输入或设定。其余量由AC潮流重构，不等式仍需检查与必要恢复。图片内对象整体编辑，页面标题、图注与其他数据页仍为原生对象。",
+          "source": "deepopf",
+          "locator": "Fig.1、§IV-B–G",
+          "status": "interpretation"
+        }
+      ],
+      "images": [
+        {
+          "index": 0,
+          "sha256": "064b7790e8ee0daa4d952831eff36edc6be632bc0d1d62ab7e80c374da4c509b",
+          "asset": "figures/architecture.png",
+          "purpose": "original scientific schematic, not measured results"
+        }
+      ]
+    },
+    {
+      "id": "variables",
+      "part": "ppt/slides/slide8.xml",
+      "title": "独立变量与重构变量",
+      "required_objects": [
+        "variables.title"
+      ],
+      "claims": [
+        {
+          "text": "预测维度按 §IV-D：2|G| + 1",
+          "source": "deepopf",
+          "locator": "Table II、§IV-C–D，PDF p.4",
+          "status": "reported"
+        }
+      ],
+      "tables": [
+        {
+          "index": 0,
+          "values": [
+            [
+              "母线类型",
+              "已知或设定",
+              "网络预测",
+              "潮流重构"
+            ],
+            [
+              "PQ 母线",
+              "Pᴰ、Qᴰ",
+              "无",
+              "θ、|V|"
+            ],
+            [
+              "PV 母线",
+              "负荷与母线类型",
+              "Pᴳ、|V|",
+              "θ、Qᴳ"
+            ],
+            [
+              "平衡母线",
+              "相角参考 θ₀",
+              "|V₀|",
+              "Pᴳ₀、Qᴳ₀"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reconstruction",
+      "part": "ppt/slides/slide9.xml",
+      "title": "预测与重构的计算依赖",
+      "required_objects": [
+        "reconstruction.title"
+      ],
+      "claims": [
+        {
+          "text": "先识别已知负荷与参考角，再读网络输出的独立变量。Sigmoid缩放因子通过边界映射形成实际预测量。AC潮流求解重构PQ电压、相角和其余发电量。等式重构不能自动处理所有运行不等式，Newton收敛情况仍需检查。参考角在原表与实现节有表述差异，具体实现复现时需要核对。",
+          "source": "deepopf",
+          "locator": "Table II、§IV-C–D、式(8)，PDF p.4",
+          "status": "interpretation"
+        }
+      ],
+      "images": [
+        {
+          "index": 0,
+          "sha256": "e357ea39fa1338f504470e9f7dce368f70e7910c76241510e178cc250f4484cc",
+          "asset": "figures/reconstruction.png",
+          "purpose": "original scientific schematic, not measured results"
+        }
+      ]
+    },
+    {
+      "id": "training",
+      "part": "ppt/slides/slide10.xml",
+      "title": "训练目标与零阶梯度估计",
+      "required_objects": [
+        "training.title"
+      ],
+      "claims": [
+        {
+          "text": "前向路径中，参考输出提供预测损失；经过AC潮流重构的越限形成惩罚。惩罚通过求解间接依赖网络输出，用正负两次扰动的差估计梯度。没有添加原文未用的潮流残差损失，也没有伪造训练曲线。",
+          "source": "deepopf",
+          "locator": "§IV-E–F，式(12)–(17)，PDF p.5",
+          "status": "interpretation"
+        }
+      ]
+    },
+    {
+      "id": "feasibility",
+      "part": "ppt/slides/slide11.xml",
+      "title": "可行性检查与恢复",
+      "required_objects": [
+        "feasibility.title"
+      ],
+      "claims": [
+        {
+          "text": "左侧列出实际需要检查的量。候选解满足全部约束后才可接受；存在越限则恢复并回到检查节点。原文恢复后100%只表示所测样本，不是所有新工况的普遍保证。支路视在功率通常为上限约束，图中范围形式是检查符号的统一概括。",
+          "source": "deepopf",
+          "locator": "§IV-G、§VI-A，Tables IV–V注释",
+          "status": "interpretation"
+        }
+      ]
+    },
+    {
+      "id": "data-route",
+      "part": "ppt/slides/slide12.xml",
+      "title": "实验数据的生成与验证路线",
+      "required_objects": [
+        "data-route.title"
+      ],
+      "claims": [
+        {
+          "text": "训练 10,000 / 测试 2,500",
+          "source": "deepopf",
+          "locator": "§VI-A，Table III，PDF pp.7–8",
+          "status": "calculated"
+        }
+      ],
+      "images": [
+        {
+          "index": 0,
+          "sha256": "b5a3bce73fcb5e8b56635e272d9d195ca6a2f17b89a4e25775c64f46f617762c",
+          "asset": "figures/data-route.png",
+          "purpose": "original scientific schematic, not measured results"
+        }
+      ]
+    },
+    {
+      "id": "experiment-design",
+      "part": "ppt/slides/slide13.xml",
+      "title": "实验设计与比较条件",
+      "required_objects": [
+        "experiment-design.title"
+      ],
+      "claims": [
+        {
+          "text": "2000母线为合成测试系统",
+          "source": "deepopf",
+          "locator": "Table III、§VI-A，PDF p.7",
+          "status": "reported"
+        }
+      ],
+      "tables": [
+        {
+          "index": 0,
+          "values": [
+            [
+              "母线数",
+              "PV母线",
+              "PQ母线",
+              "支路数",
+              "隐藏层 / 每层神经元"
+            ],
+            [
+              "30",
+              "5",
+              "24",
+              "41",
+              "2 / 64–32"
+            ],
+            [
+              "118",
+              "53",
+              "63",
+              "231",
+              "2 / 256–128"
+            ],
+            [
+              "300",
+              "68",
+              "231",
+              "411",
+              "2 / 512–256"
+            ],
+            [
+              "2000",
+              "177",
+              "1822",
+              "3693",
+              "2 / 2048–1024"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "metrics",
+      "part": "ppt/slides/slide14.xml",
+      "title": "评价指标的计算口径",
+      "required_objects": [
+        "metrics.title"
+      ],
+      "claims": [
+        {
+          "text": "平均时间之比与逐样本比值的平均并不相同",
+          "source": "deepopf",
+          "locator": "§VI-A，PDF pp.7–8",
+          "status": "reported"
+        }
+      ]
+    },
+    {
+      "id": "results-speed",
+      "part": "ppt/slides/slide15.xml",
+      "title": "DeepOPF的计算加速结果",
+      "required_objects": [
+        "results-speed.title"
+      ],
+      "claims": [
+        {
+          "text": "相对于 Pypower",
+          "source": "deepopf",
+          "locator": "Tables IV–V，PDF p.8",
+          "status": "reported"
+        }
+      ],
+      "charts": [
+        {
+          "index": 0,
+          "categories": [
+            "30",
+            "118",
+            "300",
+            "2000"
+          ],
+          "values": [
+            [
+              24,
+              22,
+              20,
+              123
+            ],
+            [
+              13,
+              12,
+              33,
+              70
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "results-feasibility",
+      "part": "ppt/slides/slide16.xml",
+      "title": "恢复前的约束满足情况",
+      "required_objects": [
+        "results-feasibility.title"
+      ],
+      "claims": [
+        {
+          "text": "两种方法均为100%",
+          "source": "deepopf",
+          "locator": "Table IV与注释，PDF p.8",
+          "status": "reported"
+        }
+      ],
+      "charts": [
+        {
+          "index": 0,
+          "categories": [
+            "30",
+            "118",
+            "300",
+            "2000"
+          ],
+          "values": [
+            [
+              42,
+              22,
+              21,
+              29
+            ],
+            [
+              100,
+              100,
+              99,
+              99
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "penalty-tradeoff",
+      "part": "ppt/slides/slide17.xml",
+      "title": "惩罚权重与成本差异",
+      "required_objects": [
+        "penalty-tradeoff.title"
+      ],
+      "claims": [
+        {
+          "text": "“<0.1%”是范围信息，不能绘制成精确的0.1%柱高",
+          "source": "deepopf",
+          "locator": "§VI-C、Table VI，PDF pp.8–9",
+          "status": "reported"
+        }
+      ],
+      "tables": [
+        {
+          "index": 0,
+          "values": [
+            [
+              "权重设置",
+              "恢复前可行率",
+              "成本差异",
+              "平均加速比"
+            ],
+            [
+              "w₁=1，w₂=1",
+              "100%",
+              "1.5%",
+              "22倍"
+            ],
+            [
+              "w₁=1，w₂=0.1",
+              "100%",
+              "<0.1%",
+              "22倍"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "boundaries",
+      "part": "ppt/slides/slide18.xml",
+      "title": "结果解读的适用边界",
+      "required_objects": [
+        "boundaries.title"
+      ],
+      "claims": [
+        {
+          "text": "来源差异：网页摘要写 <0.1%，最新版PDF摘要写 <0.2%",
+          "source": "deepopf",
+          "locator": "PDF摘要p.1；Tables IV–V p.8；§VII",
+          "status": "interpretation"
+        },
+        {
+          "text": "网页摘要写 <0.1%",
+          "source": "abstract",
+          "locator": "Abstract",
+          "status": "reported"
+        }
+      ],
+      "tables": [
+        {
+          "index": 0,
+          "values": [
+            [
+              "问题",
+              "本案例采用的证据",
+              "解释边界"
+            ],
+            [
+              "成本差异",
+              "Table IV：<0.1%；Table V部分算例：<0.2%",
+              "不合并成统一<0.1%"
+            ],
+            [
+              "可行性",
+              "恢复前与恢复后分别报告",
+              "测试可行率不等于全域保证"
+            ],
+            [
+              "速度",
+              "原文硬件、负荷与计时条件",
+              "最大加速比不能推广到所有工况"
+            ],
+            [
+              "新工况",
+              "固定网络下的训练与测试",
+              "拓扑变化、分布外输入需另行验证"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "research-extension",
+      "part": "ppt/slides/slide19.xml",
+      "title": "可开展的交叉研究验证",
+      "required_objects": [
+        "research-extension.title"
+      ],
+      "claims": [
+        {
+          "text": "原创研究建议",
+          "source": "deepopf",
+          "locator": "§VII（研究建议由本报告提出）",
+          "status": "hypothesis"
+        }
+      ],
+      "images": [
+        {
+          "index": 0,
+          "sha256": "aee29267ca9ba593de7d2907c934b77823224e9ead62a7e2867fbdd78b81bc91",
+          "asset": "figures/research-extension.png",
+          "purpose": "original scientific schematic, not measured results"
+        }
+      ]
+    },
+    {
+      "id": "conclusion",
+      "part": "ppt/slides/slide20.xml",
+      "title": "结论与主要参考文献",
+      "required_objects": [
+        "conclusion.title"
+      ],
+      "claims": [
+        {
+          "text": "以方法、证据和边界收束。本文主要结果来自DeepOPF AC-OPF v6；DeepOPF+与DeepOPF-V只用于介绍不同方法路径，不跨模型比较其速度数字。报告没有训练、运行原文实验或证明实际电网部署效果。完整书目与实际所用版本见备注。",
+          "source": "deepopf",
+          "locator": "§IV、Tables IV–VI、§VII",
+          "status": "interpretation"
+        }
+      ]
+    }
+  ]
+}

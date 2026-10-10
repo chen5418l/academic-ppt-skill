@@ -23,6 +23,15 @@ REQUIRED = (
     'references/behavioral-cases.md', 'examples/transformer/index.md',
     'assets/templates/academic-layouts-v2.0.pptx',
     'examples/transformer/transformer-reading-example-v2.pptx',
+    'references/reference-adaptation.md', 'references/evidence-and-revisions.md',
+    'scripts/audit_deck.py', 'scripts/test_audit_deck.py',
+    'examples/deepopf/index.md', 'examples/deepopf/evidence.json',
+    'examples/deepopf/deepopf-academic-v3.pptx',
+    'examples/deepopf/figures/notes.md',
+    'examples/deepopf/figures/architecture.png',
+    'examples/deepopf/figures/reconstruction.png',
+    'examples/deepopf/figures/data-route.png',
+    'examples/deepopf/figures/research-extension.png',
 )
 NS = {'p': 'http://schemas.openxmlformats.org/presentationml/2006/main',
       'a': 'http://schemas.openxmlformats.org/drawingml/2006/main',
@@ -165,6 +174,19 @@ def check(root):
             data = file.read_bytes()
             if len(data) < 24 or data[:8] != b'\x89PNG\r\n\x1a\n' or struct.unpack('>II', data[16:24]) != (1600, 900):
                 errors.append(f'Invalid preview PNG: {file.relative_to(root)}')
+    case = root/'examples/deepopf'
+    deck = case/'deepopf-academic-v3.pptx'
+    evidence = case/'evidence.json'
+    if deck.is_file() and evidence.is_file():
+        try:
+            from audit_deck import check as audit
+            data = json.loads(evidence.read_text(encoding='utf-8'))
+            errors.extend('DeepOPF: '+e for e in audit(deck, data))
+            expected = {f'slide-{n:02d}.png' for n in range(1,21)}
+            if {f.name for f in (case/'previews').glob('*.png')} != expected:
+                errors.append('Unexpected DeepOPF preview set')
+        except (OSError, ValueError, KeyError, zipfile.BadZipFile, ET.ParseError) as exc:
+            errors.append('Invalid DeepOPF case: '+str(exc))
     return errors
 
 def self_test(root):
