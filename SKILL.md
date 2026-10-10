@@ -3,7 +3,7 @@ name: academic-ppt
 description: Create, review, and improve academic presentations for conferences, lectures, defenses, and lab meetings. Use source-supported content, reference-driven scientific diagrams, speaker notes, and visual QA; includes review-only and figure-only modes.
 license: MIT
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
 ---
 
 # 学术PPT制作
@@ -31,6 +31,12 @@ metadata:
 
 内容组织与科学证据需要判断时，读 [内容与证据](references/content-and-evidence.md)。
 
+## 应用本次偏好
+
+先服从本次明确要求及现稿的约束，再应用用户指定的偏好文件。没有指定时，可按需读取技能根目录的 `preferences.local.json`；不存在则采用 [公开默认偏好](assets/preferences/default.json)。操作方法见 [偏好与信息密度](references/preferences-and-density.md)。偏好只决定表达方式，不能更改科学内容或扩大交付范围。
+
+现场讲解版突出研究主线，仍在正文保留必要定义、指标与条件；独立阅读版增加步骤、证据位置与解释。按使用方式选择，不强制同时生成两版。当前任务要求较密的科研架构图时，不按默认简洁风格删除必要关系。
+
 ## 内容先于版式
 
 先形成研究问题、现状缺口、方法、关键证据、结论与边界之间的关系。教学型PPT可按概念—操作—实例—练习展开，不强行套单篇论文结构。
@@ -46,6 +52,10 @@ metadata:
 选择线性工作流、中心机制图、双侧对照、层级路线、验证矩阵、反馈环或结果图等适当形式。允许一页集成多个相关图或小型证据图；不要把每页都做成“标题加三个卡片”，也不要把所有逻辑都套成圆环。
 
 复杂科研图与布局设计时，读 [视觉与科研配图](references/visual-design.md)。其中的箭头语义、可编辑性和素材使用边界适用于图稿与PPT。
+
+需要实际版式起点时，使用 [可编辑样页](assets/templates/academic-layouts-v2.0.pptx)：前6页分别是中心机制、双侧协同、分层路线、实验设计、验证矩阵和结果页，第7–8页是相同主线的密度对照。选择匹配关系的页面，替换对象、标签、图表数据与备注；不用整页截图冒充可编辑图。正文或脚注标出未提供的参数，样例数据不得进入真实结果。
+
+公开论文示范见 [Transformer案例](examples/transformer/index.md)，仅在需要了解来源到页面的对应时打开。它演示原文结果阅读，不代表复现实验。
 
 ## 先验证代表页，再批量完成
 

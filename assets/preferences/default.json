@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "language": "zh-CN",
+  "aspect_ratio": "16:9",
+  "density": "standalone",
+  "style": "academic-framework",
+  "palette": {"core": "#214969", "inputs": "#368B85", "evidence": "#7454A0"},
+  "editable_diagrams": true,
+  "speaker_notes": true
+}
