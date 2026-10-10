@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img">
+<title>论文修改的前后对照</title>
+<desc>同一个论述对象：意见 → 修改动作 → 修订文本 → 核验依据。教学布局示例，非实验结果。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="context-stroke"/></marker></defs>
+<rect width="1600" height="900" fill="#FFFFFF"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="60" y="69" font-size="39" fill="#153D62" font-weight="700" text-anchor="start">论文修改的前后对照</text>
+<text x="60" y="114" font-size="23" fill="#587080" font-weight="400" text-anchor="start">同一个论述对象：意见 → 修改动作 → 修订文本 → 核验依据</text>
+<rect x="1280" y="37" width="260" height="44" rx="10" fill="#EDF4F7"/>
+<text x="1410" y="67" font-size="20" fill="#153D62" font-weight="700" text-anchor="middle">意见—动作—证据</text>
+<path d="M60 143H1540" fill="none" stroke="#D6E2E9" stroke-width="2"/>
+<rect x="60" y="185" width="710" height="163" rx="10" fill="#F7F4FA" stroke="#D6E2E9" stroke-width="2"/>
+<rect x="60" y="185" width="710" height="54" rx="10" fill="#7353A3"/>
+<text x="80" y="222" font-size="26" fill="#FFFFFF" font-weight="700" text-anchor="start">收到的意见</text>
+<text x="85" y="280" font-size="25" fill="#21364A" font-weight="400" text-anchor="start">结论范围过大：缺少工况、样本和对照依据。</text>
+<text x="85" y="323" font-size="25" fill="#21364A" font-weight="400" text-anchor="start">请说明适用条件，并区分示例与真实结果。</text>
+<rect x="830" y="185" width="710" height="163" rx="10" fill="#F1F8F6" stroke="#D6E2E9" stroke-width="2"/>
+<rect x="830" y="185" width="710" height="54" rx="10" fill="#247E83"/>
+<text x="850" y="222" font-size="26" fill="#FFFFFF" font-weight="700" text-anchor="start">对应修改动作</text>
+<text x="855" y="280" font-size="25" fill="#21364A" font-weight="400" text-anchor="start">限定条件；补充依据；删除未证实的普遍结论。</text>
+<text x="855" y="323" font-size="25" fill="#21364A" font-weight="400" text-anchor="start">真实数据尚缺时，保留待验证状态。</text>
+<path d="M770 266H817" fill="none" stroke="#247E83" stroke-width="3" marker-end="url(#arrow)"/>
+<path d="M415 348V380" fill="none" stroke="#587080" stroke-width="3" marker-end="url(#arrow)"/>
+<path d="M1185 348V380" fill="none" stroke="#247E83" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="60" y="398" width="710" height="249" rx="10" fill="#F4F7FA" stroke="#D6E2E9" stroke-width="2"/>
+<rect x="60" y="398" width="710" height="54" rx="10" fill="#153D62"/>
+<text x="80" y="435" font-size="26" fill="#FFFFFF" font-weight="700" text-anchor="start">修改前：示例原文</text>
+<text x="91" y="500" font-size="29" fill="#153D62" font-weight="700" text-anchor="start">“该方法显著优于现有方法，</text>
+<text x="91" y="548" font-size="29" fill="#153D62" font-weight="700" text-anchor="start">  并适用于所有运行工况。”</text>
+<text x="91" y="605" font-size="23" fill="#587080" font-weight="400" text-anchor="start">问题：比较依据与适用边界没有交代。</text>
+<rect x="830" y="398" width="710" height="249" rx="10" fill="#F1F8F6" stroke="#D6E2E9" stroke-width="2"/>
+<rect x="830" y="398" width="710" height="54" rx="10" fill="#247E83"/>
+<text x="850" y="435" font-size="26" fill="#FFFFFF" font-weight="700" text-anchor="start">修改后：示例修订稿</text>
+<text x="859" y="494" font-size="25" fill="#247E83" font-weight="400" text-anchor="start">“本例用于展示方法流程。实际效果需要在</text>
+<text x="859" y="536" font-size="25" fill="#247E83" font-weight="400" text-anchor="start">给定数据、参数及对照条件下评估；</text>
+<text x="859" y="578" font-size="25" fill="#247E83" font-weight="400" text-anchor="start">适用工况仍需进一步验证。”</text>
+<path d="M770 520H817" fill="none" stroke="#247E83" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="60" y="695" width="1480" height="107" rx="10" fill="#F5F1F9" stroke="#DFD5EA" stroke-width="2"/>
+<text x="83" y="733" font-size="25" fill="#7353A3" font-weight="700" text-anchor="start">核验依据与待补项</text>
+<text x="83" y="781" font-size="24" fill="#21364A" font-weight="400" text-anchor="start">核对来源、实验条件与对照结果；记录修改位置。真实研究中应替换为实际文本和证据。</text>
+<path d="M60 839H1540" fill="none" stroke="#D6E2E9" stroke-width="2"/>
+<text x="60" y="877" font-size="20" fill="#587080" font-weight="400" text-anchor="start">教学布局示例 · 非实验结果 · 原创可编辑 SVG</text>
+<text x="1540" y="877" font-size="20" fill="#587080" font-weight="400" text-anchor="end">academic-ppt  /  03</text>
+</g>
+</svg>

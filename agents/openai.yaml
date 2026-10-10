@@ -1,0 +1,4 @@
+interface:
+  display_name: "学术PPT制作"
+  short_description: "按参考样页制作、审阅与优化学术PPT，兼顾信息丰富度、独立可读性和科研证据"
+  default_prompt: "使用 $academic-ppt，根据我的最新材料和参考图规划学术PPT，先给出内容方案与代表性样页。"

@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img">
+<title>研究问题与证据框架</title>
+<desc>示例主题：AI辅助科研如何形成可追溯、可复核的产出？。教学布局示例，非实验结果。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="context-stroke"/></marker></defs>
+<rect width="1600" height="900" fill="#FFFFFF"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="60" y="69" font-size="39" fill="#153D62" font-weight="700" text-anchor="start">研究问题与证据框架</text>
+<text x="60" y="114" font-size="23" fill="#587080" font-weight="400" text-anchor="start">示例主题：AI辅助科研如何形成可追溯、可复核的产出？</text>
+<rect x="1280" y="37" width="260" height="44" rx="10" fill="#EDF4F7"/>
+<text x="1410" y="67" font-size="20" fill="#153D62" font-weight="700" text-anchor="middle">问题—方法—验证</text>
+<path d="M60 143H1540" fill="none" stroke="#D6E2E9" stroke-width="2"/>
+<rect x="60" y="184" width="350" height="443" rx="10" fill="#F1F8F6" stroke="#D6E2E9" stroke-width="2"/>
+<rect x="60" y="184" width="350" height="54" rx="10" fill="#247E83"/>
+<text x="80" y="221" font-size="26" fill="#FFFFFF" font-weight="700" text-anchor="start">研究材料与约束</text>
+<text x="83" y="277" font-size="25" fill="#21364A" font-weight="400" text-anchor="start">文献与实验记录</text>
+<text x="83" y="329" font-size="25" fill="#21364A" font-weight="400" text-anchor="start">数据、代码与版本</text>
+<text x="83" y="381" font-size="25" fill="#21364A" font-weight="400" text-anchor="start">任务要求与评价条件</text>
+<path d="M83 404H385" fill="none" stroke="#B9DCD8" stroke-width="2"/>
+<text x="83" y="453" font-size="24" fill="#247E83" font-weight="700" text-anchor="start">先确认材料能支持什么</text>
+<text x="83" y="499" font-size="23" fill="#21364A" font-weight="400" text-anchor="start">完整材料 → 支撑分析</text>
+<text x="83" y="543" font-size="23" fill="#21364A" font-weight="400" text-anchor="start">部分材料 → 限定结论</text>
+<text x="83" y="587" font-size="23" fill="#21364A" font-weight="400" text-anchor="start">研究设想 → 标注假设</text>
+<rect x="480" y="184" width="640" height="143" rx="14" fill="#153D62"/>
+<text x="800" y="230" font-size="25" fill="#BCE3E8" font-weight="700" text-anchor="middle">核心研究问题</text>
+<text x="800" y="274" font-size="29" fill="#FFFFFF" font-weight="700" text-anchor="middle">怎样连接材料、研究动作与证据？</text>
+<text x="800" y="307" font-size="22" fill="#E1ECF4" font-weight="400" text-anchor="middle">让每个关键主张都有可核对的依据</text>
+<path d="M410 259H467" fill="none" stroke="#247E83" stroke-width="3" marker-end="url(#arrow)"/>
+<path d="M800 327V359" fill="none" stroke="#153D62" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="480" y="374" width="640" height="126" rx="10" fill="#F4F8FA" stroke="#D6E2E9" stroke-width="2"/>
+<rect x="480" y="374" width="640" height="54" rx="10" fill="#153D62"/>
+<text x="500" y="411" font-size="26" fill="#FFFFFF" font-weight="700" text-anchor="start">方法与评价</text>
+<text x="501" y="461" font-size="24" fill="#153D62" font-weight="700" text-anchor="start">问题分解</text>
+<text x="501" y="490" font-size="19" fill="#587080" font-weight="400" text-anchor="start">明确假设与条件</text>
+<text x="712" y="461" font-size="24" fill="#153D62" font-weight="700" text-anchor="start">研究执行</text>
+<text x="712" y="490" font-size="19" fill="#587080" font-weight="400" text-anchor="start">分析、计算或实验</text>
+<text x="923" y="461" font-size="24" fill="#153D62" font-weight="700" text-anchor="start">对照验证</text>
+<text x="923" y="490" font-size="19" fill="#587080" font-weight="400" text-anchor="start">与来源及标准核对</text>
+<path d="M800 501V533" fill="none" stroke="#153D62" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="480" y="548" width="640" height="80" rx="10" fill="#E9F4F1" stroke="#BBDAD4" stroke-width="2"/>
+<text x="800" y="582" font-size="26" fill="#247E83" font-weight="700" text-anchor="middle">执行记录：输入 → 操作 → 可见产出</text>
+<text x="800" y="614" font-size="22" fill="#587080" font-weight="400" text-anchor="middle">保留版本、参数、文件及实际检查结果</text>
+<rect x="1190" y="184" width="350" height="444" rx="10" fill="#F7F4FA" stroke="#D6E2E9" stroke-width="2"/>
+<rect x="1190" y="184" width="350" height="54" rx="10" fill="#7353A3"/>
+<text x="1210" y="221" font-size="26" fill="#FFFFFF" font-weight="700" text-anchor="start">证据与结论边界</text>
+<text x="1213" y="277" font-size="25" fill="#21364A" font-weight="400" text-anchor="start">原文与图表来源</text>
+<text x="1213" y="329" font-size="25" fill="#21364A" font-weight="400" text-anchor="start">日志与计算依据</text>
+<text x="1213" y="381" font-size="25" fill="#21364A" font-weight="400" text-anchor="start">评价结果及适用范围</text>
+<path d="M1213 404H1515" fill="none" stroke="#DBD0E9" stroke-width="2"/>
+<text x="1213" y="453" font-size="24" fill="#7353A3" font-weight="700" text-anchor="start">区分三类信息</text>
+<text x="1213" y="499" font-size="23" fill="#21364A" font-weight="400" text-anchor="start">已有证据：可追溯</text>
+<text x="1213" y="543" font-size="23" fill="#21364A" font-weight="400" text-anchor="start">计算解释：有依据</text>
+<text x="1213" y="587" font-size="23" fill="#21364A" font-weight="400" text-anchor="start">待验证项：明确标注</text>
+<path d="M1135 586H1176" fill="none" stroke="#7353A3" stroke-width="3" marker-end="url(#arrow)"/>
+<path d="M1365 628V690H800V644" fill="none" stroke="#7353A3" stroke-width="3" marker-end="url(#arrow)" stroke-dasharray="9 7"/>
+<rect x="875" y="671" width="310" height="40" rx="10" fill="#FFFFFF"/>
+<text x="1030" y="699" font-size="21" fill="#7353A3" font-weight="400" text-anchor="middle">核验后修正方法与表达</text>
+<rect x="60" y="745" width="1480" height="61" rx="10" fill="#F3F6F8"/>
+<text x="83" y="784" font-size="22" fill="#153D62" font-weight="700" text-anchor="start">关系图例</text>
+<path d="M233 777H303" fill="none" stroke="#247E83" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="324" y="784" font-size="22" fill="#21364A" font-weight="400" text-anchor="start">材料支撑 / 执行过程</text>
+<path d="M626 777H696" fill="none" stroke="#7353A3" stroke-width="3" marker-end="url(#arrow)" stroke-dasharray="9 7"/>
+<text x="717" y="784" font-size="22" fill="#21364A" font-weight="400" text-anchor="start">验证反馈</text>
+<text x="1081" y="784" font-size="22" fill="#587080" font-weight="400" text-anchor="start">实际任务需替换为真实对象</text>
+<path d="M60 839H1540" fill="none" stroke="#D6E2E9" stroke-width="2"/>
+<text x="60" y="877" font-size="20" fill="#587080" font-weight="400" text-anchor="start">教学布局示例 · 非实验结果 · 原创可编辑 SVG</text>
+<text x="1540" y="877" font-size="20" fill="#587080" font-weight="400" text-anchor="end">academic-ppt  /  01</text>
+</g>
+</svg>
